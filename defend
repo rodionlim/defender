@@ -1,0 +1,17 @@
+#!/bin/bash
+
+hash node || {
+    echo "node not found in PATH"
+    exit 1
+}
+
+hash npm || {
+    echo "npm not found in PATH"
+    exit 1
+}
+
+if [ ! -d node_modules ]; then
+    npm install
+fi
+
+node main.js defend
