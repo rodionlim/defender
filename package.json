@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "active-win": "^8.1.1"
+    "active-win": "^8.1.1",
+    "robotjs": "^0.6.0"
   }
 }

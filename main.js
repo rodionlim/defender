@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-const activeWin = require("active-win");
 const { exec } = require("child_process");
 const { exit } = require("process");
+
+const activeWin = require("active-win");
+const robot = require("robotjs");
 
 // Put all your defending logic over here
 const checker = (data) => {
@@ -28,7 +30,7 @@ function checkActiveWindow() {
         lockScreen();
         // exit
         exit(0);
-      }, 10000);
+      }, 8000);
     } else {
       console.log("All good. No snoopers around");
       // Do something else when your application is not active
@@ -44,7 +46,7 @@ function maximizeWindow() {
 }
 
 function lockScreen() {
-  exec("open -a ScreenSaverEngine");
+  robot.keyToggle("q", "down", ["command", "control"]);
 }
 
 setInterval(() => {
